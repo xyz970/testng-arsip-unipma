@@ -7,10 +7,15 @@ import org.testng.annotations.BeforeSuite;
 public class Setup {
 	
 	private static WebDriver driver;
+	private static DriverChoice driverChoice;
 	Setup setup;
 
     public static WebDriver getDriver() {
         return driver;
+    }
+    
+    public static DriverChoice getActiveDriver() {
+    	return driverChoice;
     }
    
 
@@ -18,19 +23,26 @@ public class Setup {
     public void beforeSuite() {
     	System.out.print("Testing Dimulai");
     	initiateProperty();
+    	DriverChoice dChoice = DriverChoice.FIREFOX; 
 		DriverHelper driverHelper = new DriverHelper();
-		driver = driverHelper.setSelectedDriver(DriverChoice.CHROME);
+		driver = driverHelper.setSelectedDriver(dChoice);
+		driverChoice = dChoice;
     }
 
     @AfterSuite
     public void afterSuite() {
     	System.out.print("Testing Selesai");
-        driver.quit();
+//        driver.quit();
     }
 	
 	public void initiateProperty() {
 		String parentDir = "C:\\mydata\\testing\\";
 		System.setProperty("webdriver.chrome.driver", parentDir+"testng-arsip-unipma\\driver\\chromedriver.exe");
+	}
+	
+	public static String getParentDirectory() {
+		String parentDir = "C:\\mydata\\testing\\testng-arsip-unipma\\";
+		return parentDir;
 	}
 	
 	public static String getWebUrl() {

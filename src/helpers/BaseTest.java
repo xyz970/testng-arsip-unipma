@@ -1,8 +1,6 @@
 package helpers;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.Test;
-
 public class BaseTest {
 	protected Setup setup;
 	protected WebDriver driver;

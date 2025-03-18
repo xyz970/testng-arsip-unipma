@@ -5,6 +5,9 @@
 	      	<class name="helpers.Setup"/>
 	        <class name="functionalities.LoginTest"/>
 	        <class name="functionalities.StrukturProdiTest"/>
+	        <class name="functionalities.DokumenTest"/>
+	        <class name="functionalities.KriteriaTest"/>
+	        <class name="functionalities.UserDataTest"/>
 	     </classes>
 	 </test>
 </suite>
