@@ -43,16 +43,7 @@ public class LoginTest {
 		String path = "C:\\mydata\\testing\\testng-arsip-unipma\\credentials\\email.txt";
 		List<String> allLines = Files.readAllLines(Paths.get(path));
 		   return allLines;
-//		File file = new File(path);
-//		Scanner scan = new Scanner(file);
-//		return scan;
 	}
-//	private Scanner getPasswordsCreds() throws FileNotFoundException {
-//		String path = "C:\\mydata\\testing\\testng-arsip-unipma\\credentials\\password.txt";
-//		File file = new File(path);
-//		Scanner scan = new Scanner(file);
-//		return scan;
-//	}
 	
 	private List<String> getPasswordsCreds() throws IOException {
 		String path = "C:\\mydata\\testing\\testng-arsip-unipma\\credentials\\password.txt";

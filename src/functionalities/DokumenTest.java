@@ -29,6 +29,8 @@ public class DokumenTest {
 		driver.findElement(By.name("letter_no")).sendKeys("Test");
 
 		WebElement letter_date = driver.findElement(By.name("letter_date"));
+		
+		//Cek jika platform yang digunakan adalah Mozilla Firefox
 		if (Setup.getActiveDriver() == DriverChoice.FIREFOX) {
 			letter_date.click();
 			letter_date.sendKeys("2025-07-12");
@@ -40,8 +42,9 @@ public class DokumenTest {
 		}
 		
 		Thread.sleep(1000);
-
 		WebElement date_received = driver.findElement(By.name("date_received"));
+		
+		//Cek jika platform yang digunakan adalah Mozilla Firefox
 		if (Setup.getActiveDriver() == DriverChoice.FIREFOX) {
 			date_received.click();
 			date_received.sendKeys("2025-08-12");

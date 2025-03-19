@@ -1,13 +1,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Testing" verbose="1" parallel="none" thread-count="1">
-	<test name="Functionalities">
+	<test name="Functionality">
 	     <classes>
 	      	<class name="helpers.Setup"/>
 	        <class name="functionalities.LoginTest"/>
 	        <class name="functionalities.StrukturProdiTest"/>
-	        <class name="functionalities.DokumenTest"/>
-	        <class name="functionalities.KriteriaTest"/>
-	        <class name="functionalities.UserDataTest"/>
+	        <class name="functionalities.LogoutTest"/>
 	     </classes>
 	 </test>
+	 
 </suite>

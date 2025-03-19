@@ -23,16 +23,16 @@ public class Setup {
     public void beforeSuite() {
     	System.out.print("Testing Dimulai");
     	initiateProperty();
-    	DriverChoice dChoice = DriverChoice.FIREFOX; 
+    	DriverChoice dChoice = DriverChoice.CHROME; 
 		DriverHelper driverHelper = new DriverHelper();
 		driver = driverHelper.setSelectedDriver(dChoice);
 		driverChoice = dChoice;
     }
 
     @AfterSuite
-    public void afterSuite() {
+    public void afterSuite() throws InterruptedException {
     	System.out.print("Testing Selesai");
-//        driver.quit();
+        driver.quit();
     }
 	
 	public void initiateProperty() {
@@ -46,7 +46,6 @@ public class Setup {
 	}
 	
 	public static String getWebUrl() {
-//		return "https://www.google.com/";
 		return "http://arsip-unipma.my.id/";
 	}
 }

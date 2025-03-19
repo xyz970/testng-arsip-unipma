@@ -18,13 +18,13 @@ public class UserDataTest {
 
 		boolean alertShow = false;
 		while (alertShow == false) {
-			driver.findElement(By.name("name")).clear();
-			driver.findElement(By.name("email")).clear();
-			driver.findElement(By.name("password")).clear();
+			driver.findElement(By.name("name")).clear(); //Kosongkan kolom input
+			driver.findElement(By.name("email")).clear(); //Kosongkan kolom input
+			driver.findElement(By.name("password")).clear(); //Kosongkan kolom input
 			if (driver.findElements(By.xpath("//div[@class='alert alert-danger alert-dismissible fade show']"))
 					.size() != 0) {
 				password = "12345";
-				alertShow = true;
+				alertShow = true; // Ketika ada error password maka akan mengubah karakter yang diinputkan
 			}
 
 			driver.findElement(By.name("name")).sendKeys("TestUser");
@@ -41,9 +41,5 @@ public class UserDataTest {
 			
 
 		}
-
-//		 Thread.sleep(2000);
-//		 driver.findElement(By.xpath("//button[@class='btn btn-sm btn-light text-primary']")).click();
-
 	}
 }
