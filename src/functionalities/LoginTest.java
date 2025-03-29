@@ -18,10 +18,7 @@ public class LoginTest {
 		Reporter.log("Access web");
 		System.out.println("Access Web");
 		Setup.getDriver().get(Setup.getWebUrl());
-		Thread.sleep(1000);
 	}
-	
-
 	
 	@Test(priority = 2, dependsOnGroups = {"login_group"})
 	public void loginFunction() throws InterruptedException, IOException {
@@ -30,23 +27,20 @@ public class LoginTest {
 		System.out.println("Login");
 		for (int i = 0; i < getEmailsCreds().size(); i++) {
 			driver.findElement(By.id("email")).sendKeys(getEmailsCreds().get(i));
-			Thread.sleep(1000);
 			driver.findElement(By.id("password")).sendKeys(getPasswordsCreds().get(i));
-			Thread.sleep(1000);
 			driver.findElement(By.xpath("//button[@type='submit']")).click();
-			Thread.sleep(2000);
 		}
 	}
 	
 	
 	private List<String> getEmailsCreds() throws IOException {
-		String path = "C:\\mydata\\testing\\testng-arsip-unipma\\credentials\\email.txt";
+		String path = "D:\\testing\\testng-arsip-unipma\\credentials\\email.txt";
 		List<String> allLines = Files.readAllLines(Paths.get(path));
 		   return allLines;
 	}
 	
 	private List<String> getPasswordsCreds() throws IOException {
-		String path = "C:\\mydata\\testing\\testng-arsip-unipma\\credentials\\password.txt";
+		String path = "D:\\testing\\testng-arsip-unipma\\credentials\\password.txt";
 		List<String> allLines = Files.readAllLines(Paths.get(path));
 		   return allLines;
 	}

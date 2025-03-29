@@ -36,16 +36,16 @@ public class Setup {
     }
 	
 	public void initiateProperty() {
-		String parentDir = "C:\\mydata\\testing\\";
-		System.setProperty("webdriver.chrome.driver", parentDir+"testng-arsip-unipma\\driver\\chromedriver.exe");
+		String parentDir = "D:\\testing";
+//		System.setProperty("webdriver.chrome.driver", parentDir+"testng-arsip-unipma\\driver\\chromedriver.exe");
 	}
 	
 	public static String getParentDirectory() {
-		String parentDir = "C:\\mydata\\testing\\testng-arsip-unipma\\";
+		String parentDir = "D:\\testing\\testng-arsip-unipma\\";
 		return parentDir;
 	}
 	
 	public static String getWebUrl() {
-		return "http://arsip-unipma.my.id/";
+		return "http://127.0.0.1:8000/";
 	}
 }

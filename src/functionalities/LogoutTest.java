@@ -10,7 +10,8 @@ import helpers.Setup;
 public class LogoutTest {
 	
   @Test(priority = 3, dependsOnGroups = { "login_group" })
-  public void logoutFunction() {
+  public void logoutTestPage() {
+	 Reporter.log("logout");
 	 WebDriver driver = Setup.getDriver();
 	 
 	 //Klik icon profil di pojok kanan atas

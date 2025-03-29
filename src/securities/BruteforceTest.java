@@ -38,12 +38,12 @@ public class BruteforceTest {
 	
 	
 	private List<String> getEmailDict() throws IOException {
-		String path = "C:\\mydata\\testing\\testng-arsip-unipma\\credentials\\dict\\email.txt";
+		String path = "D:\\testing\\testng-arsip-unipma\\credentials\\dict\\email.txt";
 		List<String> allLines = Files.readAllLines(Paths.get(path));
 		   return allLines;
 	}
 	private List<String> getPasswordDict() throws IOException {
-		String path = "C:\\mydata\\testing\\testng-arsip-unipma\\credentials\\dict\\password.txt";
+		String path = "D:\\testing\\testng-arsip-unipma\\credentials\\dict\\password.txt";
 		List<String> allLines = Files.readAllLines(Paths.get(path));
 		return allLines;
 	}
