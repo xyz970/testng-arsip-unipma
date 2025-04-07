@@ -2,6 +2,7 @@ package functionalities;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -10,6 +11,7 @@ import helpers.Setup;
 public class UserDataTest {
 	@Test(priority = 3, dependsOnGroups = { "login_group" })
 	public void UserDataTestPage() throws InterruptedException {
+		
 		Reporter.log("user data");
 		WebDriver driver = Setup.getDriver();
 		driver.get(Setup.getWebUrl() + "admin/user");
@@ -18,23 +20,27 @@ public class UserDataTest {
 
 		boolean alertShow = false;
 		while (alertShow == false) {
-			driver.findElement(By.name("name")).clear(); //Kosongkan kolom input
-			driver.findElement(By.name("email")).clear(); //Kosongkan kolom input
-			driver.findElement(By.name("password")).clear(); //Kosongkan kolom input
+			Thread.sleep(500);
+			WebElement nameInput = driver.findElement(By.name("name"));
+			WebElement emailInput = driver.findElement(By.name("email"));
+			WebElement passwordInput = driver.findElement(By.name("password"));
+			nameInput.clear(); //Kosongkan kolom input
+			emailInput.clear(); //Kosongkan kolom input
+			passwordInput.clear(); //Kosongkan kolom input
 			if (driver.findElements(By.xpath("//div[@class='alert alert-danger alert-dismissible fade show']"))
 					.size() != 0) {
 				password = "12345";
 				alertShow = true; // Ketika ada error password maka akan mengubah karakter yang diinputkan
 			}
 
-			driver.findElement(By.name("name")).sendKeys("TestUser");
+			nameInput.sendKeys("TestUser");
 
-			driver.findElement(By.name("email")).sendKeys("testemail@mail.com");
+			emailInput.sendKeys("testemail@mail.com");
 
-			driver.findElement(By.name("password")).sendKeys(password);
+			passwordInput.sendKeys(password);
 
-			driver.findElement(By.xpath("//button[@class='btn btn-primary']")).click();
-			
+			WebElement button = driver.findElement(By.xpath("//button[@class='btn btn-primary']"));
+			button.click();
 			
 
 		}

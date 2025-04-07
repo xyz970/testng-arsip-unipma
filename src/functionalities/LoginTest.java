@@ -5,6 +5,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import helpers.Setup;
 import org.testng.Reporter;
@@ -28,19 +29,21 @@ public class LoginTest {
 		for (int i = 0; i < getEmailsCreds().size(); i++) {
 			driver.findElement(By.id("email")).sendKeys(getEmailsCreds().get(i));
 			driver.findElement(By.id("password")).sendKeys(getPasswordsCreds().get(i));
-			driver.findElement(By.xpath("//button[@type='submit']")).click();
+			WebElement button = driver.findElement(By.xpath("//button[@type='submit']"));
+			button.click();
+			Thread.sleep(500);
 		}
 	}
 	
 	
 	private List<String> getEmailsCreds() throws IOException {
-		String path = "D:\\testing\\testng-arsip-unipma\\credentials\\email.txt";
+		String path = Setup.getParentDirectory()+"credentials\\email.txt";
 		List<String> allLines = Files.readAllLines(Paths.get(path));
 		   return allLines;
 	}
 	
 	private List<String> getPasswordsCreds() throws IOException {
-		String path = "D:\\testing\\testng-arsip-unipma\\credentials\\password.txt";
+		String path = Setup.getParentDirectory()+"credentials\\password.txt";
 		List<String> allLines = Files.readAllLines(Paths.get(path));
 		   return allLines;
 	}
