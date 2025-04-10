@@ -15,6 +15,7 @@ public class UserDataTest {
 		Reporter.log("user data");
 		WebDriver driver = Setup.getDriver();
 		driver.get(Setup.getWebUrl() + "admin/user");
+		Thread.sleep(500);
 		String password = "123";
 		driver.findElement(By.xpath("//a[@class='btn btn-sm btn-primary']")).click();
 

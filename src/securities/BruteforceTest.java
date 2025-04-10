@@ -1,5 +1,9 @@
 package securities;
 
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertNotEquals;
+import static org.testng.Assert.assertTrue;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -35,6 +39,7 @@ public class BruteforceTest {
 			button.click();
 			Thread.sleep(1000);
 		}
+		assertTrue(driver.getCurrentUrl().replaceAll("(?)https", "http").equals(Setup.getWebUrl()));
 	}
 	
 	
