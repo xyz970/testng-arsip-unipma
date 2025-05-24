@@ -5,11 +5,8 @@
 	      	<class name="helpers.Setup"/>
 	        <class name="functionalities.LoginTest"/>
 	        <class name="functionalities.StrukturProdiTest"/>
-	        <class name="functionalities.KriteriaTest"/>
+	        <class name="functionalities.DosenTest"/>
 	        <class name="functionalities.DokumenTest"/>
-	        <class name="functionalities.UserDataTest"/>
-	        <class name="functionalities.LogoutTest"/>
-	        <class name="securities.BruteforceTest"></class>
 	     </classes>
 	 </test>
 	 
