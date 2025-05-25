@@ -29,7 +29,9 @@ public class UserDataTest {
 		WebDriver driver = Setup.getDriver();
 		String query = "Test"; // Ganti variabel sesuai dengan nama/email yang dicari
 		Reporter.log("Pencarian pengguna berdasarkan nama/email");
+		Thread.sleep(1500);
 		driver.findElement(By.cssSelector("#crudTable_filter > label > input")).sendKeys(query);
+		Thread.sleep(3000);
 		
 	}
 	
@@ -90,7 +92,9 @@ public class UserDataTest {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		Thread.sleep(1500);
 		WebElement nextBtn = driver.findElement(By.cssSelector("#crudTable_next > a"));
+		Thread.sleep(1500);
 		js.executeScript("arguments[0].scrollIntoView();", nextBtn);
+		Thread.sleep(1500);
 		nextBtn.click();
 	}
 }

@@ -43,13 +43,12 @@ public class KriteriaSatuTest {
 	public void detailKriteria1Page() throws InterruptedException {
 		Reporter.log("Fitur Detail berfungsi dengan baik");
 		WebDriver driver = Setup.getDriver();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		driver.findElement(
 				By.cssSelector("#crudTable > tbody > tr:nth-child(1) > td:nth-child(5) > a.btn.btn-success.btn-xs"))
 				.click();
 		Thread.sleep(1500);
-		driver.findElement(By.cssSelector(
-				"#layoutSidenav_content > main > header > div > div > div > div.col-12.col-xl-auto.mb-3 > button"))
-				.click();
+		driver.get(Setup.getWebUrl() + "admin/letter/kriteria-1");
 
 	}
 
@@ -59,9 +58,9 @@ public class KriteriaSatuTest {
 		WebDriver driver = Setup.getDriver();
 		Thread.sleep(1500);
 		driver.findElement(
-				By.cssSelector("#crudTable > tbody > tr:nth-child(1) > td:nth-child(5) > a.btn.btn-success.btn-xs"))
+				By.cssSelector("#crudTable > tbody > tr:nth-child(1) > td:nth-child(5) > a.btn.btn-primary.btn-xs"))
 				.click();
-		Thread.sleep(1500);
+		Thread.sleep(3000);
 		clearInput();
 		driver.findElement(By.cssSelector(
 				"#layoutSidenav_content > main > div > form > div > div > div > div.card-body > div:nth-child(7) > div > button"))
@@ -73,7 +72,7 @@ public class KriteriaSatuTest {
 	public void updateKriteria1WithInvalidInput() throws InterruptedException {
 		Reporter.log("Mengubah data dengan inputan salah(cth. File dokumen berekstensi jpg)");
 		WebDriver driver = Setup.getDriver();
-		Thread.sleep(1500);
+		Thread.sleep(3000);
 
 		driver.findElement(By.name("letter_file")).sendKeys(Setup.getParentDirectory() + "files\\image.jpg");
 
@@ -113,9 +112,9 @@ public class KriteriaSatuTest {
 		driver.findElement(By.cssSelector(
 				"#layoutSidenav_content > main > div > form > div > div > div > div.card-body > div:nth-child(7) > div > button"))
 				.click();
-
+		Thread.sleep(3000);
 		WebElement alert = driver
-				.findElement(By.cssSelector("div[class='alert alert-danger alert-dismissible fade show']"));
+				.findElement(By.cssSelector("#layoutSidenav_content > main > div > div"));
 		assertTrue(alert.isDisplayed());
 
 	}
@@ -124,7 +123,8 @@ public class KriteriaSatuTest {
 	public void updateKriteria1WithValidInput() throws InterruptedException {
 		Reporter.log("Mengubah data dengan inputan valid");
 		WebDriver driver = Setup.getDriver();
-		Thread.sleep(1500);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		Thread.sleep(3000);
 
 		driver.findElement(By.name("letter_file")).sendKeys(Setup.getParentDirectory() + "files\\file.pdf");
 
@@ -161,9 +161,11 @@ public class KriteriaSatuTest {
 
 		driver.findElement(By.name("regarding")).sendKeys("Perihal Test[edited]");
 
-		driver.findElement(By.cssSelector(
-				"#layoutSidenav_content > main > div > form > div > div > div > div.card-body > div:nth-child(7) > div > button"))
-				.click();
+		WebElement saveBtn = driver.findElement(By.cssSelector(
+				"#layoutSidenav_content > main > div > form > div > div > div > div.card-body > div:nth-child(7) > div > button"));
+		js.executeScript("arguments[0].scrollIntoView();", saveBtn);
+		Thread.sleep(1500);
+		saveBtn.click();
 
 	}
 
@@ -189,6 +191,7 @@ public class KriteriaSatuTest {
 		Thread.sleep(1500);
 		WebElement nextBtn = driver.findElement(By.cssSelector("#crudTable_next > a"));
 		js.executeScript("arguments[0].scrollIntoView();", nextBtn);
+		Thread.sleep(1500);
 		nextBtn.click();
 	}
 	

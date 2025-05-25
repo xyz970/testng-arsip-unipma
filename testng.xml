@@ -7,6 +7,12 @@
 	        <class name="functionalities.StrukturProdiTest"/>
 	        <class name="functionalities.DosenTest"/>
 	        <class name="functionalities.DokumenTest"/>
+	        <class name="functionalities.kriteria.KriteriaSatuTest"/>
+	        <class name="functionalities.UserDataTest"/>
+	        <class name="functionalities.ProfileTest"/>
+	        <class name="functionalities.ProfileResetPassword"/>
+	        <class name="functionalities.LogoutTest"/>
+	        
 	     </classes>
 	 </test>
 	 
