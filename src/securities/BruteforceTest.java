@@ -21,7 +21,7 @@ import helpers.Setup;
 public class BruteforceTest {
 
 
-	@Test(priority = 5)
+	@Test(priority = 160)
 	public void bruteforceCondition() throws IOException, InterruptedException {
 		WebDriver driver =Setup.getDriver();
 		Reporter.log("Bruteforce Test");

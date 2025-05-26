@@ -12,6 +12,7 @@
 	        <class name="functionalities.ProfileTest"/>
 	        <class name="functionalities.ProfileResetPassword"/>
 	        <class name="functionalities.LogoutTest"/>
+	        <class name="functionalities.securities.BruteforceTest"/>
 	        
 	     </classes>
 	 </test>
