@@ -45,7 +45,7 @@ public class DosenTest {
   public void insertNewDosenWithFalseInput() throws InterruptedException {
 	  WebDriver driver =Setup.getDriver();
 	  JavascriptExecutor js = (JavascriptExecutor) driver;
-	  Reporter.log("Tampilkan pesan gagal ketika input tidak valid (cth. input nama mengandung simbol)");
+	  Reporter.log("Tampilkan pesan gagal ketika input tidak valid (cth. input nama mengandung simbol) saat tambah data");
 	  Thread.sleep(2000);
 	  driver.findElement(By.name("name")).sendKeys("2318nama@#$");
 	  driver.findElement(By.name("nidn")).sendKeys("nidn23187%^&");
@@ -108,7 +108,7 @@ public class DosenTest {
 	  WebDriver driver =Setup.getDriver();
 	  String dataId = "10";
 	  JavascriptExecutor js = (JavascriptExecutor) driver;
-	  Reporter.log("Tampilkan pesan gagal ketika input tidak valid (cth. input nama mengandung simbol)");
+	  Reporter.log("Tampilkan pesan gagal ketika input tidak valid (cth. input nama mengandung simbol) saat ubah data");
 	  Thread.sleep(2000);
 
 	  js.executeScript("$('#updateModal"+dataId+" > div > div > form > div.modal-body > div.mb-3 > div.col-md-12 > input[name=name]').val('2318nama@#$[edited]')");
