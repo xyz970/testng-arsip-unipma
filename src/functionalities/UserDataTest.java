@@ -43,6 +43,7 @@ public class UserDataTest {
 		Thread.sleep(1500);
 		WebElement button = driver.findElement(By.xpath("//button[@class='btn btn-primary']"));
 		button.click();
+		assertTrue(driver.getCurrentUrl().replaceAll("(?)https", "http").equals(Setup.getWebUrl()+"admin/user/create"));
 	}
 	
 	@Test(priority = 73, dependsOnGroups = { "login_group" })
@@ -58,7 +59,7 @@ public class UserDataTest {
 		passwordInput.sendKeys("123");
 		WebElement button = driver.findElement(By.xpath("//button[@class='btn btn-primary']"));
 		button.click();
-		assertTrue(driver.getCurrentUrl().replaceAll("(?)https", "http").equals(Setup.getWebUrl()+"admin/user/create"));
+		assertTrue(!driver.getCurrentUrl().replaceAll("(?)https", "http").equals(Setup.getWebUrl()+"admin/user/create"));
 	}
 	
 	@Test(priority = 74, dependsOnGroups = { "login_group" })
