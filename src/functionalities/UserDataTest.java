@@ -49,7 +49,7 @@ public class UserDataTest {
 	@Test(priority = 73, dependsOnGroups = { "login_group" })
 	public void insertUserDataWithFalseInput() throws InterruptedException{
 		Thread.sleep(500);
-		Reporter.log("Tampilkan pesan gagal ketika input tidak valid ");
+		Reporter.log("Tampilkan pesan gagal ketika input tidak valid saat tambah data");
 		WebDriver driver = Setup.getDriver();
 		WebElement nameInput = driver.findElement(By.name("name"));
 		WebElement emailInput = driver.findElement(By.name("email"));
